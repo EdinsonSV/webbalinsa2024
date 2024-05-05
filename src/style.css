@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Alpha Male Modern';
+  src: url('/edinson_2024/font/AlphaMaleModern.ttf') format('truetype');
+}
+
+.text-balinsa{
+  color: #FEAA1A
+}
+
+*{
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+}
+
+.balinsaLetra {
+  font-family: 'AlphaMaleModern';
+  line-height: 0;
+  letter-spacing: 2px;
+}
+
+.bg-mainEdinson::before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: #00000070;
+  backdrop-filter: blur(2px);
+}
