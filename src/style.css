@@ -19,8 +19,7 @@
 
 .balinsaLetra {
   font-family: 'AlphaMaleModern';
-  line-height: 0;
-  letter-spacing: 2px;
+  line-height: 0.7;
 }
 
 .bg-mainEdinson::before{
