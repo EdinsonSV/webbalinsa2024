@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Función para animar la imagen
     function animateTrailer() {
         trailerImg.style.display = "block";
-        trailerImg.style.right = "-174.92px"; // Se posiciona al inicio
+        trailerImg.style.right = "-218.50px"; // Se posiciona al inicio
         BImg.style.display = "block";
         BImg.style.right = "-30.2px"; // Se posiciona al inicio
         A1Img.style.display = "block";
@@ -119,13 +119,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <template>
     <main class="min-w-screen h-screen relative overflow-hidden" id="inicio">
-        <nav class="bg-white border-gray-200 dark:border-gray-600 dark:bg-gray-800 shadow-lg sticky top-0 left-0 w-full max-h-[72px] z-50">
+        <nav class="bg-white border-gray-200 dark:border-gray-600 dark:bg-gray-800 shadow-lg fixed top-0 left-0 w-full max-h-[72px] z-50">
             <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl h-[72px] px-4">
                 <a href="#" class="flex items-center justify-center space-x-2 h-[72px] rtl:space-x-reverse">
                     <img src="../../public/img/icon.png" class="h-12" alt="Flowbite Logo" />
                     <div class="flex flex-col justify-center items-start">
-                        <span class="leading-[0.8] text-lg md:leading-[0.8] balinsaLetra md:text-xl font-semibold whitespace-nowrap dark:text-white">INDUSTRIAS</span>
-                        <span class="leading-[0.8] text-2xl md:leading-[0.8] balinsaLetra md:text-4xl font-semibold whitespace-nowrap dark:text-white">BALINSA</span>
+                        <span class="leading-[0.8] text-lg md:leading-[0.8] balinsaLetra md:text-xl font-semibold whitespace-nowrap text-[#251F17] dark:text-white">INDUSTRIAS</span>
+                        <span class="leading-[0.8] text-2xl md:leading-[0.8] balinsaLetra md:text-4xl font-semibold whitespace-nowrap text-[#251F17] dark:text-white">BALINSA</span>
                     </div>
                 </a>
                 <button data-collapse-toggle="mega-menu-full-image" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mega-menu-full-image" aria-expanded="false">
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             <a href="#nosotros" class="block py-2 px-3 text-balinsa border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-400 md:p-0 dark:hover:bg-gray-700 hover:text-yellow-400 md:dark:hover:bg-transparent dark:border-gray-700">Nosotros</a>
                         </li>
                         <li>
-                            <a href="#" class="block py-2 px-3 text-balinsa border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-400 md:p-0 dark:hover:bg-gray-700 hover:text-yellow-400 md:dark:hover:bg-transparent dark:border-gray-700">Servicios</a>
+                            <a href="#servicios" class="block py-2 px-3 text-balinsa border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-400 md:p-0 dark:hover:bg-gray-700 hover:text-yellow-400 md:dark:hover:bg-transparent dark:border-gray-700">Servicios</a>
                         </li>
                         <li>
                             <a href="#" class="block py-2 px-3 text-balinsa border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-400 md:p-0 dark:hover:bg-gray-700 hover:text-yellow-400 md:dark:hover:bg-transparent dark:border-gray-700">Productos</a>
@@ -159,13 +159,13 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
         </nav>
         <!-- Termina Contenido del nav -->
-        <section class="w-screen h-[calc(100vh-72px)] bg-[url('../../public/img/fondo.jpg')] bg-cover bg-center bg-no-repeat bg-mainEdinson relative flex justify-center">
+        <section class="w-screen h-screen bg-[url('../../public/img/fondo.jpg')] bg-cover bg-center bg-no-repeat bg-mainEdinson relative flex justify-center">
             <div class="absolute z-20 w-full h-full max-w-screen-xl">
                 <div class="flex justify-center items-center w-full h-full flex-col">
-                    <div class="flex flex-col max-w-3xl gap-4 px-4">
+                    <div class="flex flex-col max-w-3xl gap-6 md:gap-10 px-4">
                         <h4 class="text-white text-2xl font-semibold leading-none">Innovación Industrial</h4>
-                        <h1 class="text-white text-4xl md:text-6xl font-bold leading-none">Soluciones de Pesaje y Automatización</h1>
-                        <p id="texto-escrito" class="text-white text-lg"></p>
+                        <h1 class="text-white text-4xl md:text-6xl font-bold leading-none md:leading-tight">Soluciones de Pesaje y Automatización</h1>
+                        <p id="texto-escrito" class="text-white text-lg leading-[1.2] md:leading-normal"></p>
                         <a href="https://heyzine.com/flip-book/cff364737d.html" target="_blank"><button class="Documents-btn">
                             <span class="folderContainer">
                                 <svg
@@ -251,9 +251,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
             </div>
         </section>
-        <div class="w-full h-16 absolute bottom-0 z-30 flex items-center overflow-hidden">
+        <div class="w-full h-16 absolute z-30 flex items-center overflow-hidden -bottom-[1px]">
             <div class="relative w-full h-full overflow-hidden">
-                <img src="../../public/img/trailer 1C-01.png" alt="Trailer" class="h-16 absolute -right-[174.92px]" id="trailerImg"/>
+                <div class="h-16 absolute -right-[218.50px]" id="trailerImg">
+                    <img src="../../public/img/luces.png" alt="Luces" class="h-16 opacity-0 dark:opacity-100 absolute dark:relative"/>
+                    <img src="../../public/img/trailer 1C-01.png" alt="Trailer" class="h-16"/>
+                </div>
                 <div class="relative w-full h-7">
                     <img src="../../public/img/B.png" alt="" class="h-7 absolute -bottom-[17px] -right-[30.2px]" id="BImg">
                     <img src="../../public/img/A.png" alt="" class="h-7 absolute -bottom-[17px] -right-[30.2px]" id="A1Img">
@@ -264,8 +267,9 @@ document.addEventListener("DOMContentLoaded", function() {
                     <img src="../../public/img/A2.png" alt="" class="h-7 absolute -bottom-[17px] -right-[30.2px]" id="A2Img">
                 </div>
             </div>
-            <div class="absolute h-full overflow-hidden -right-[174.92px] z-30 w-[174.92px]" id="divTrailerPesas">
+            <div class="absolute h-full overflow-hidden -right-[174.50px] dark:-right-[218.50px] z-30 w-[174.50px] dark:w-[218.50px] bottom-0" id="divTrailerPesas">
                 <div class="relative w-full">
+                    <img src="../../public/img/luces.png" alt="Luces" class="h-16 w-full opacity-0 dark:opacity-100 absolute dark:relative"/>
                     <img src="../../public/img/trailer 1C-01.png" alt="Trailer" class="h-16 w-full"/>
                     <div class="absolute top-0 h-7 w-full">
                         <img src="../../public/img/B.png" alt="" class="h-7 absolute -bottom-[17px] right-[117.5px]">

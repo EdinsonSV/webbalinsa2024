@@ -8,7 +8,7 @@
 }
 
 .text-balinsa{
-  color: #FEAA1A
+  color: #FEAA1A;
 }
 
 *{
@@ -20,6 +20,24 @@
 
 html{
   scroll-behavior: smooth;
+}
+
+/* Estilos para el scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho del scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #222; /* Color de fondo del track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #555; /* Color del thumb (la parte móvil del scrollbar) */
+  border-radius: 4px; /* Borde redondeado del thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #888; /* Color del thumb al pasar el mouse sobre él */
 }
 
 .balinsaLetra {
@@ -35,6 +53,5 @@ html{
   top: 0;
   left: 0;
   z-index: 10;
-  background-color: #00000070;
-  backdrop-filter: blur(2px);
+  background-color: #13130D90;
 }
