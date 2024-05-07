@@ -24,10 +24,10 @@ function updateTabClasses() {
         const button = li.querySelector('button');
         if (button.getAttribute('aria-selected') === 'true') {
             // Agregar clases adicionales si está seleccionado
-            button.classList.add('text-balinsa', 'border-yellow-400', 'hover:text-yellow-400');
+            button.classList.add('text-balinsa', 'border-yellow-400', 'hover:text-yellow-400', 'dark:border-yellow-400', 'dark:hover:text-yellow-400', 'dark:text-yellow-400');
         } else {
             // Remover clases del elemento li si no está seleccionado
-            button.classList.remove('text-balinsa', 'border-yellow-400', 'hover:text-yellow-400');
+            button.classList.remove('text-balinsa', 'border-yellow-400', 'hover:text-yellow-400', 'dark:border-yellow-400', 'dark:hover:text-yellow-400', 'dark:text-yellow-400');
         }
     });
 }
@@ -58,7 +58,7 @@ updateTabClasses();
         </div>
         <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-4xl dark:border-gray-700 dark:bg-gray-800">
             <div class="object-cover rounded-t-lg w-full md:h-96 md:w-[450px] md:rounded-none md:rounded-s-lg">
-                <img class="object-cover object-left md:h-96 w-full md:w-[450px] rounded-t-lg md:rounded-none md:rounded-s-lg" src="../../public/img/balanzaparapesarcamion.png" alt="">
+                <img class="object-cover object-left md:h-96 w-full md:w-[450px] rounded-t-lg md:rounded-none md:rounded-s-lg" src="../../public/img/balanzaparapesarcamion.png" alt="" lazy="loading">
             </div>
             <div class="flex flex-col justify-between p-4 leading-normal w-full">
                 <h5 class="mb-2 text-xl md:text-2xl font-bold tracking-tight text-[#251F17] dark:text-white">CREAMOS E IMPLEMENTAMOS ESTRATEGIAS DE AUTOMATIZACIÓN INTEGRALES</h5>
@@ -67,7 +67,7 @@ updateTabClasses();
             </div>
         </div>
 
-        <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-20 max-w-4xl">
+        <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-10 max-w-4xl">
             <ul class="text-sm font-medium text-center text-gray-500 divide-x divide-gray-200 rounded-lg flex dark:divide-gray-600 dark:text-gray-400 rtl:divide-x-reverse" id="fullWidthTab" data-tabs-toggle="#fullWidthTabContent" role="tablist">
                 <li class="w-full">
                     <button id="stats-tab" data-tabs-target="#stats" type="button" role="tab" aria-controls="stats" aria-selected="true" class="inline-block w-full p-4 rounded-ss-lg bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">Misión</button>
@@ -81,13 +81,13 @@ updateTabClasses();
             </ul>
             <div id="fullWidthTabContent" class="border-t border-gray-200 dark:border-gray-600">
                 <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="stats" role="tabpanel" aria-labelledby="stats-tab">
-                    <p class="text-gray-900 dark:text-white text-sm md:text-base">Contribuir a una mejor competitividad de la empresa creada para brindar ventas y servicios con la más alta tecnología que el mercado requiere, dando soluciones integrales de pesaje y metrología, cumpliendo con los estándares de calidad, resaltando que nuestro equipo de trabajo opera bajo un marco estricto de ética, cultura ambiental y responsabilidad social, Buscando la plena satisfacción que aumenten la rentabilidad de los procesos productivos</p>
+                    <p class="text-gray-800 dark:text-gray-400 text-sm md:text-base">Contribuir a una mejor competitividad de la empresa creada para brindar ventas y servicios con la más alta tecnología que el mercado requiere, dando soluciones integrales de pesaje y metrología, cumpliendo con los estándares de calidad, resaltando que nuestro equipo de trabajo opera bajo un marco estricto de ética, cultura ambiental y responsabilidad social, Buscando la plena satisfacción que aumenten la rentabilidad de los procesos productivos</p>
                 </div>
                 <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="about" role="tabpanel" aria-labelledby="about-tab">
-                    <p class="text-gray-900 dark:text-white text-sm md:text-base">Ser una empresa líder en la comercialización de productos de pesaje, metrología y cctv, buscando nuevas alternativas, soluciones y oportunidades en el mercado nacional, satisfaciendo las necesidades no solo de nuestros clientes sino también de la industria peruana, brindando calidad, excelencia y atención inmediata en el servicio</p>
+                    <p class="text-gray-800 dark:text-gray-400 text-sm md:text-base">Ser una empresa líder en la comercialización de productos de pesaje, metrología y cctv, buscando nuevas alternativas, soluciones y oportunidades en el mercado nacional, satisfaciendo las necesidades no solo de nuestros clientes sino también de la industria peruana, brindando calidad, excelencia y atención inmediata en el servicio</p>
                 </div>
                 <div class="hidden p-4 bg-white rounded-lg dark:bg-gray-800" id="faq" role="tabpanel" aria-labelledby="faq-tab">
-                    <ul role="list" class="space-y-2 text-gray-500 dark:text-gray-400">
+                    <ul role="list" class="space-y-2 text-gray-800 dark:text-gray-400">
                         <li class="flex space-x-2 rtl:space-x-reverse items-center">
                             <svg class="flex-shrink-0 w-3.5 h-3.5 text-yellow-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>

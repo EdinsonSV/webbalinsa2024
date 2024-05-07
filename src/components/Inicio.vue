@@ -114,6 +114,33 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }, 20);
 
+    window.addEventListener('scroll', function() {
+        var scrollPos = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight || 0;
+
+        var navLinks = document.querySelectorAll('.nav_ul li a');
+        navLinks.forEach(function(currLink) {
+            // Verifica si el elemento tiene el atributo href
+            if (!currLink.hasAttribute('href')) return;
+
+            var refElementId = currLink.getAttribute('href').substring(1);
+            var refElement = document.getElementById(refElementId);
+            if (!refElement) return;
+
+            var refElementPos = refElement.getBoundingClientRect().top + window.scrollY;
+            var refElementHeight = refElement.offsetHeight;
+
+            if (refElementPos <= scrollPos + windowHeight / 2 && refElementPos + refElementHeight > scrollPos + windowHeight / 2) {
+                document.querySelectorAll('.nav_ul li').forEach(function(li) {
+                    li.classList.remove('current');
+                });
+                currLink.parentNode.classList.add('current');
+            } else {
+                currLink.parentNode.classList.remove('current');
+            }
+        });
+    });
+
 });
 </script>
 
@@ -135,24 +162,36 @@ document.addEventListener("DOMContentLoaded", function() {
                     </svg>
                 </button>
                 <div id="mega-menu-full-image" class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
-                    <ul class="flex flex-col mt-4 font-medium md:flex-row md:mt-0 md:space-x-8 rtl:space-x-reverse md:items-center bg-white dark:bg-gray-800 rounded-lg">
-                        <li>
+                    <ul class="flex flex-col mt-4 font-medium md:flex-row md:mt-0 md:space-x-8 rtl:space-x-reverse md:items-center bg-white dark:bg-gray-800 rounded-lg nav_ul">
+                        <li class="current">
                             <a href="#inicio" class="block py-2 px-3 text-balinsa border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-400 md:p-0 dark:hover:bg-gray-700 hover:text-yellow-400 md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Inicio</a>
                         </li>
-                        <li>
+                        <li class="">
                             <a href="#nosotros" class="block py-2 px-3 text-balinsa border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-400 md:p-0 dark:hover:bg-gray-700 hover:text-yellow-400 md:dark:hover:bg-transparent dark:border-gray-700">Nosotros</a>
                         </li>
-                        <li>
+                        <li class="">
                             <a href="#servicios" class="block py-2 px-3 text-balinsa border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-400 md:p-0 dark:hover:bg-gray-700 hover:text-yellow-400 md:dark:hover:bg-transparent dark:border-gray-700">Servicios</a>
                         </li>
-                        <li>
-                            <a href="#" class="block py-2 px-3 text-balinsa border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-400 md:p-0 dark:hover:bg-gray-700 hover:text-yellow-400 md:dark:hover:bg-transparent dark:border-gray-700">Productos</a>
-                        </li>
-                        <li>
-                            <a href="#" class="block py-2 px-3 text-balinsa border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-400 md:p-0 dark:hover:bg-gray-700 hover:text-yellow-400 md:dark:hover:bg-transparent dark:border-gray-700">Contactanos</a>
+                        <li class="">
+                            <a href="#productos" class="block py-2 px-3 text-balinsa border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-400 md:p-0 dark:hover:bg-gray-700 hover:text-yellow-400 md:dark:hover:bg-transparent dark:border-gray-700">Productos</a>
                         </li>
                         <li class="p-2">
-                            <input type="checkbox" class="l" id="swith_modo_oscuro">
+                            <div class="container">
+                                <label class="toggle" for="switch">
+                                    <input id="switch" class="input" type="checkbox">
+                                    <div class="icon icon--moon">
+                                        <svg height="20" width="20" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path clip-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" fill-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                
+                                    <div class="icon icon--sun">
+                                        <svg height="20" width="20" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"></path>
+                                        </svg>
+                                    </div>
+                                </label>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -287,77 +326,48 @@ document.addEventListener("DOMContentLoaded", function() {
 </template>
 
 <style scoped>
-.l {
-  display: block;
-  margin-bottom: 1.5em;
-  font-size: 1em;
+
+li.current {
+    border-bottom: 3px solid #FEAA1A;
 }
 
-.l {
-  background-color: rgba(0,0,0,0.7);
-  border-radius: 0.75em;
-  box-shadow: 0.125em 0.125em 0 0.125em rgba(0,0,0,0.3) inset;
-  color: #fdea7b;
-  display: inline-flex;
-  align-items: center;
-  margin: auto;
-  padding: 0.15em;
-  width: 3em;
-  height: 1.5em;
-  transition: background-color 0.1s 0.3s ease-out, box-shadow 0.1s 0.3s ease-out;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-.l:before, .l:after {
-  content: "";
-  display: block;
-}
-
-.l:before {
-  background-color: #d7d7d7;
+.toggle {
+  background-color: #fff;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
-  width: 1.2em;
-  height: 1.2em;
-  transition: background-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
-  z-index: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 50px 20px rgba(0, 0, 0, .1);
+  line-height: 1;
 }
 
-.l:after {
-  background: linear-gradient(transparent 50%, rgba(0,0,0,0.15) 0) 0 50% / 50% 100%,
-		repeating-linear-gradient(90deg,#bbb 0,#bbb,#bbb 20%,#999 20%,#999 40%) 0 50% / 50% 100%,
-		radial-gradient(circle at 50% 50%,#888 25%, transparent 26%);
-  background-repeat: no-repeat;
-  border: 0.25em solid transparent;
-  border-left: 0.4em solid #d8d8d8;
-  border-right: 0 solid transparent;
-  transition: border-left-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
-  transform: translateX(-22.5%);
-  transform-origin: 25% 50%;
-  width: 1.2em;
-  height: 1em;
-  box-sizing: border-box;
-}
-/* Checked */
-.l:checked {
-  background-color: rgba(0,0,0,0.45);
-  box-shadow: 0.125em 0.125em 0 0.125em rgba(0,0,0,0.1) inset;
+.input {
+  display: none;
 }
 
-.l:checked:before {
-  background-color: currentColor;
-  transform: translateX(125%)
+.icon {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  transition: transform 250ms;
 }
 
-.l:checked:after {
-  border-left-color: currentColor;
-  transform: translateX(-2.5%) rotateY(180deg);
+.icon--moon {
+  transition-delay: 100ms;
 }
-/* Other States */
-.l:focus {
-	/* Usually an anti-A11Y practice but set to remove an annoyance just for this demo */
-  outline: 0;
+
+.icon--sun {
+  transform: scale(0);
+}
+
+#switch:checked + .icon--moon {
+  transform: rotate(360deg) scale(0);
+}
+
+#switch:checked ~ .icon--sun {
+  transition-delay: 100ms;
+  transform: scale(1) rotate(360deg);
 }
 
 .Documents-btn {

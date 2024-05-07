@@ -2,6 +2,8 @@
 import Inicio from './components/Inicio.vue'
 import Nosotros from './components/Nosotros.vue'
 import Servicios from './components/Servicios.vue'
+import Productos from './components/Productos.vue'
+import Footer from './components/Footer.vue'
 </script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -45,6 +47,8 @@ document.addEventListener("DOMContentLoaded", function() {
   <Inicio/>
   <Nosotros/>
   <Servicios/>
+  <Productos/>
+  <Footer/>
 </template>
 
 <style scoped>

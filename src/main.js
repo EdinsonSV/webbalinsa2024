@@ -4,7 +4,7 @@ import App from './App.vue'
 
 createApp(App).mount('#app')
 
-let inputElement = document.getElementById('swith_modo_oscuro');
+let inputElement = document.getElementById('switch');
 
 // Verificar si el navegador está en modo oscuro
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -26,7 +26,7 @@ if (localStorage.getItem('modoOscuro') === 'true') {
 }
 
 // Manejar el click en el interruptor de modo oscuro
-document.getElementById('swith_modo_oscuro').addEventListener('click', function() {
+document.getElementById('switch').addEventListener('click', function() {
     document.documentElement.classList.toggle('dark');
     localStorage.setItem('modoOscuro', document.documentElement.classList.contains('dark'));
 });
