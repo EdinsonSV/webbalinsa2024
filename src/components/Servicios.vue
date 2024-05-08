@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
             </div>
         </div>
-        <div class="glide max-w-4xl my-20 px-6" id="glideMarcas">
+        <div class="max-w-4xl my-20 px-6" id="glideMarcas">
             <h3 class="text-center text-xl md:text-2xl font-bold text-[#251F17] dark:text-white mb-5">MARCAS CON LAS QUE TRABAJAMOS</h3>
             <div class="relative w-full">
                 <div class="glide__track overflow-hidden" data-glide-el="track">

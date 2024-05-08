@@ -9,7 +9,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <section class="bg-[#14110D] w-full py-10" id="footer">
+    <section class="bg-[#0D0C0A] w-full py-10" id="footer">
         <div class="text-white max-w-4xl m-auto px-4">
             <div class="w-full flex justify-center items-start md:items-center gap-4 flex-col md:flex-row">
                 <div class="flex-1">
